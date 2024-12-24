@@ -25,14 +25,14 @@ def calculadora():
                 continue
 
             try:
-                num1 = float(input("Ingrese el primer número: "))
+                num1 = float(input("Ingrese el primer número (por ejemplo, 12.5): "))
                 if abs(num1) > 1e6:
                     print("Advertencia: El número ingresado es muy grande y podría causar problemas de precisión.")
-                num2 = float(input("Ingrese el segundo número: "))
+                num2 = float(input("Ingrese el segundo número (por ejemplo, -3.4): "))
                 if abs(num2) > 1e6:
                     print("Advertencia: El número ingresado es muy grande y podría causar problemas de precisión.")
             except ValueError:
-                print("Error: Entrada no válida. Por favor, ingrese números válidos.")
+                print("Error: Entrada no válida. Por favor, ingrese números válidos como 10, -5, o 3.14.")
                 continue
 
             if opcion == 1:
@@ -51,7 +51,7 @@ def calculadora():
                 except ZeroDivisionError:
                     print("Error: No se puede dividir entre cero.")
         except ValueError:
-            print("Error: Por favor, ingrese un número válido para la operación.")
+            print("Error: Por favor, ingrese un número válido para la operación (por ejemplo, 1, 2, 3, etc.).")
 
 if __name__ == "__main__":
     calculadora()
