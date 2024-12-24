@@ -36,7 +36,8 @@ def calculadora():
                 continue
 
             if opcion == 1:
-                resultado = num1 + num2
+                num1 = num1 + 1
+                resultado = num1 + num2 
                 print(f"El resultado de la suma es: {resultado}")
             elif opcion == 2:
                 resultado = num1 - num2
