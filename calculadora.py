@@ -26,7 +26,11 @@ def calculadora():
 
             try:
                 num1 = float(input("Ingrese el primer número: "))
+                if abs(num1) > 1e6:
+                    print("Advertencia: El número ingresado es muy grande y podría causar problemas de precisión.")
                 num2 = float(input("Ingrese el segundo número: "))
+                if abs(num2) > 1e6:
+                    print("Advertencia: El número ingresado es muy grande y podría causar problemas de precisión.")
             except ValueError:
                 print("Error: Entrada no válida. Por favor, ingrese números válidos.")
                 continue
