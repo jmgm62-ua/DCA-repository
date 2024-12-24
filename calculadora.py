@@ -47,12 +47,18 @@ def calculadora():
                 print(f"El resultado de la multiplicación es: {resultado}")
             elif opcion == 4:
                 try:
+                    if num2 == 0:
+                        print("Error: No se puede dividir entre cero. Intente ingresar un divisor diferente a cero.")
+                        continue
                     resultado = num1 / num2
                     print(f"El resultado de la división es: {resultado}")
                 except ZeroDivisionError:
-                    print("Error: No se puede dividir entre cero. Intente ingresar un divisor diferente a cero.")
+                    print("Error inesperado al realizar la división.")
         except ValueError:
             print("Error: Por favor, ingrese un número válido para la operación (por ejemplo, 1, 2, 3, etc.).")
+        except KeyboardInterrupt:
+            print("\nInterrupción detectada. Saliendo de la calculadora. ¡Hasta luego!")
+            break
 
 if __name__ == "__main__":
     calculadora()
