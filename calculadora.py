@@ -18,6 +18,19 @@ def calculadora():
             except ValueError:
                 print("Error: Entrada no válida. Por favor, ingrese un número válido (por ejemplo, 10, -5, o 3.14).")
 
+    def realizar_operacion(opcion, num1, num2):
+        if opcion == 1:
+            num1 = num1 + 1
+            return num1 + num2, "suma"
+        elif opcion == 2:
+            return num1 - num2, "resta"
+        elif opcion == 3:
+            return num1 * num2, "multiplicación"
+        elif opcion == 4:
+            if num2 == 0:
+                return None, "división entre cero"
+            return num1 / num2, "división"
+
     while True:
         mostrar_menu()
 
@@ -40,22 +53,12 @@ def calculadora():
             num1 = obtener_numero("Ingrese el primer número: ")
             num2 = obtener_numero("Ingrese el segundo número: ")
 
-            if opcion == 1:
-                num1 = num1 + 1
-                resultado = num1 + num2
-                print(f"El resultado de la suma es: {resultado}")
-            elif opcion == 2:
-                resultado = num1 - num2
-                print(f"El resultado de la resta es: {resultado}")
-            elif opcion == 3:
-                resultado = num1 * num2
-                print(f"El resultado de la multiplicación es: {resultado}")
-            elif opcion == 4:
-                if num2 == 0:
-                    print("Error: No se puede dividir entre cero. Intente ingresar un divisor diferente a cero.")
-                    continue
-                resultado = num1 / num2
-                print(f"El resultado de la división es: {resultado}")
+            resultado, operacion = realizar_operacion(opcion, num1, num2)
+
+            if resultado is None:
+                print("Error: No se puede realizar una división entre cero. Intente con otro divisor.")
+            else:
+                print(f"El resultado de la {operacion} es: {resultado}")
 
         except ValueError:
             print("Error: Por favor, ingrese un número válido para la operación (por ejemplo, 1, 2, 3, etc.).")
