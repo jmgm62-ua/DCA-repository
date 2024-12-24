@@ -19,17 +19,13 @@ def calculadora():
                 print("Error: Entrada no válida. Por favor, ingrese un número válido (por ejemplo, 10, -5, o 3.14).")
 
     def realizar_operacion(opcion, num1, num2):
-        if opcion == 1:
-            num1 = num1 + 1
-            return num1 + num2, "suma"
-        elif opcion == 2:
-            return num1 - num2, "resta"
-        elif opcion == 3:
-            return num1 * num2, "multiplicación"
-        elif opcion == 4:
-            if num2 == 0:
-                return None, "división entre cero"
-            return num1 / num2, "división"
+        operaciones = {
+            1: (num1 + num2 + 1, "suma"),
+            2: (num1 - num2, "resta"),
+            3: (num1 * num2, "multiplicación"),
+            4: (None, "división entre cero") if num2 == 0 else (num1 / num2, "división")
+        }
+        return operaciones.get(opcion, (None, "operación no válida"))
 
     while True:
         mostrar_menu()
@@ -56,7 +52,7 @@ def calculadora():
             resultado, operacion = realizar_operacion(opcion, num1, num2)
 
             if resultado is None:
-                print("Error: No se puede realizar una división entre cero. Intente con otro divisor.")
+                print(f"Error: No se puede realizar la {operacion}. Intente nuevamente.")
             else:
                 print(f"El resultado de la {operacion} es: {resultado}")
 
