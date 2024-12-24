@@ -1,7 +1,7 @@
 def calculadora():
     while True:
-        print("\n--- Calculadora ---")
-        print("Seleccione la operación:")
+        print("\n--- Bienvenido a la Calculadora Interactiva ---")
+        print("Seleccione la operación que desea realizar:")
         print("1. Suma")
         print("2. Resta")
         print("3. Multiplicación")
