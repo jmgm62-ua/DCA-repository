@@ -12,8 +12,13 @@ def calculadora():
             opcion = int(input("Ingrese el número de la operación: "))
 
             if opcion == 5:
-                print("Saliendo de la calculadora. ¡Adiós!")
-                break
+                confirmar = input("¿Está seguro de que desea salir? (s/n): ").strip().lower()
+                if confirmar == 's':
+                    print("Saliendo de la calculadora. ¡Adiós!")
+                    break
+                else:
+                    print("Operación cancelada. Volviendo al menú principal.")
+                    continue
 
             if opcion not in [1, 2, 3, 4]:
                 print("Opción no válida. Por favor, elija una opción entre 1 y 5.")
