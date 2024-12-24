@@ -37,7 +37,7 @@ def calculadora():
 
             if opcion == 1:
                 num1 = num1 + 1
-                resultado = num1 + num2 
+                resultado = num1 + num2
                 print(f"El resultado de la suma es: {resultado}")
             elif opcion == 2:
                 resultado = num1 - num2
@@ -50,7 +50,7 @@ def calculadora():
                     resultado = num1 / num2
                     print(f"El resultado de la división es: {resultado}")
                 except ZeroDivisionError:
-                    print("Error: No se puede dividir entre cero.")
+                    print("Error: No se puede dividir entre cero. Intente ingresar un divisor diferente a cero.")
         except ValueError:
             print("Error: Por favor, ingrese un número válido para la operación (por ejemplo, 1, 2, 3, etc.).")
 
